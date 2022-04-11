@@ -1,6 +1,14 @@
-import { Box, Container, Stack, Text, IconButton } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Stack,
+  Text,
+  IconButton,
+  Image,
+} from "@chakra-ui/react";
 import { FaInstagram, FaTwitter, FaLinkedinIn, FaGithub } from "react-icons/fa";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 export default function Footer() {
   return (
     <Box bg={"black"} color={"white"} mt="20">
@@ -13,14 +21,18 @@ export default function Footer() {
         justify={{ base: "center", md: "space-between" }}
         align={{ base: "center", md: "center" }}
       >
-        <Text
-          color="white"
-          fontFamily={"Montserrat_Medium"}
-          fontSize="20px"
-          className="sm:text-lg xl:text-3xl"
-        >
-          Ankit Gautam
-        </Text>
+        <Image
+          _hover={{
+            cursor: "pointer",
+          }}
+          onClick={() => {
+            window.location.reload();
+          }}
+          src="/asset/images/logo.ico"
+          alt="logo"
+          height={"30px"}
+        />
+
         <Text color="white">© 2022 All rights reserved</Text>
         <Stack direction={"row"} spacing={6}>
           <IconButton

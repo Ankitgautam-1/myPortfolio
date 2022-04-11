@@ -87,7 +87,7 @@ const Driver = () => {
             <h1 className=" text-3xl  sm:text-4xl">Travel Treat</h1>
           </div>
           <div className="text-black text-xl mob:text-3xl  sm:text-4xl font-extrabold md:text-5xl flex  justify-center">
-            User App
+            Driver&#39;s App
           </div>
           <div
             style={{ fontFamily: "Montserrat_Medium" }}
@@ -123,8 +123,8 @@ const Driver = () => {
             </Button>
             <Button
               as="a"
-              href="https://github.com/Ankitgautam-1/Travel-Treat-App"
-              _focus={{}}
+              href="/asset/resources/drivers.apk"
+              download={"drivers"}
               marginTop="10px"
               leftIcon={<BsBoxArrowInUpRight />}
               target={"_blank"}

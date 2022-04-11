@@ -136,7 +136,7 @@ const HomePage = () => {
           }}
           initial="hidden"
           animate="show"
-          className="top-[70%] bottom-20 left-5 mob:left-11 flex flex-col-reverse fixed"
+          className="top-[70%] bottom-30 left-5 mob:left-11 flex flex-col-reverse fixed"
         >
           <MotionIconButton
             as="a"
@@ -202,7 +202,7 @@ const HomePage = () => {
           >
             LinkedIn
           </MotionIconButton>
-          <MotionIconButton
+          {/* <MotionIconButton
             as="a"
             href="#"
             width="45px"
@@ -232,7 +232,7 @@ const HomePage = () => {
             }}
           >
             Instagram
-          </MotionIconButton>
+          </MotionIconButton> */}
         </motion.div>
       </div>
     </div>

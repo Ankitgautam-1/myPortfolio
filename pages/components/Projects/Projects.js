@@ -123,7 +123,8 @@ const Projects = () => {
             </Button>
             <Button
               as="a"
-              href="https://github.com/Ankitgautam-1/Travel-Treat-App"
+              href="/asset/resources/user.apk"
+              download={"user"}
               _focus={{}}
               marginTop="10px"
               leftIcon={<BsBoxArrowInUpRight />}
