@@ -31,8 +31,8 @@ const HomePage = () => {
     xl: "scale(1.1)",
   });
   return (
-    <div className=" min-h-[600px]   flex items-center justify-center  h-full  max-w-[1440px] ">
-      <div className="flex  w-full   overflow-hidden flex-col lg:flex-row h-screen  items-center justify-center max-h-[700px] min-h-[300px] min-w-[1200px] ">
+    <div className="   flex items-center justify-center   max-w-[1440px] ">
+      <div className="flex  w-full   overflow-hidden flex-col lg:flex-row  items-center justify-center max-h-[700px] min-h-[300px] min-w-[1200px] ">
         <div
           className="flex px-10 sm:px-0
            lg:ml-20 2xl:ml-0  min-w-[500px] flex-[1] mob:flex-[2] flex-col w-full space-y-2 mob:space-y-5 items-center justify-center xl:min-w-[550px]  mob:min-h-[300px]"
