@@ -12,12 +12,6 @@ import { Stack, useBreakpointValue } from "@chakra-ui/react";
 import Tech from "./components/Projects/Tech";
 import About from "./components/Utils/About";
 export default function Home() {
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setLoading(false);
-    }, 4000);
-  }, []);
   return (
     <div>
       <Head>
@@ -28,67 +22,48 @@ export default function Home() {
         />
         <link rel="icon" href="/asset/images/logo.ico" />
       </Head>
-      <AnimateSharedLayout>
-        <AnimatePresence exitBeforeEnter>
-          {loading && (
-            <motion.h2
-              key={"theThanks"}
-              className="w-full h-screen flex items-center justify-center"
-              transition={{
-                ease: "backInOut",
-              }}
-              exit={{ opacity: 0, y: 200 }}
-            >
-              <Loading />
-            </motion.h2>
-          )}
-          {!loading && (
-            <motion.div key={"theThanks"} exit={{ y: -100 }}>
-              <div
-                className="overflow-x-hidden"
-                style={{ fontFamily: "Montserrat_Medium" }}
-              >
-                <Header />
-                <div
-                  className=" w-full h-[96vh]  flex max-h-[850px] min-h-[600px] items-center justify-center"
-                  style={{
-                    marginTop: "25px",
-                  }}
-                  id="Home"
-                >
-                  <HomePage />
-                </div>
-                <div
-                  className=" w-full h-max pt-10 md:pt-0    md:pl-0 flex     items-center justify-center"
-                  id="Edu"
-                >
-                  <Tech />
-                </div>
-                <Stack
-                  id="Projects"
-                  className=" w-full   h-[1200px] md:h-[800px] lg:h-[650px] lg:pt-0 md:pl-0 flex  min-h-[600px] items-center justify-center"
-                >
-                  <Projects />
-                </Stack>
 
-                <Stack
-                  id="Projects"
-                  className=" flex w-full  max-w-[1500px]  items-center justify-center"
-                >
-                  <Driver />
-                </Stack>
-                <div
-                  className=" w-full h-max    md:pl-0 flex     items-center justify-center"
-                  id="About_me"
-                >
-                  <About />
-                </div>
-                <Footer />
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </AnimateSharedLayout>
+      <div
+        className="overflow-x-hidden"
+        style={{ fontFamily: "Montserrat_Medium" }}
+      >
+        <Header />
+        <div
+          className=" w-full h-[96vh]  flex max-h-[850px] min-h-[600px] items-center justify-center"
+          style={{
+            marginTop: "25px",
+          }}
+          id="Home"
+        >
+          <HomePage />
+        </div>
+        <div
+          className=" w-full h-max pt-10 md:pt-0    md:pl-0 flex     items-center justify-center"
+          id="Edu"
+        >
+          <Tech />
+        </div>
+        <Stack
+          id="Projects"
+          className=" w-full   h-[1200px] md:h-[800px] lg:h-[650px] lg:pt-0 md:pl-0 flex  min-h-[600px] items-center justify-center"
+        >
+          <Projects />
+        </Stack>
+
+        <Stack
+          id="Projects"
+          className=" flex w-full  max-w-[1500px]  items-center justify-center"
+        >
+          <Driver />
+        </Stack>
+        <div
+          className=" w-full h-max    md:pl-0 flex     items-center justify-center"
+          id="About_me"
+        >
+          <About />
+        </div>
+        <Footer />
+      </div>
     </div>
   );
 }

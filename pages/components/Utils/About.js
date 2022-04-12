@@ -5,17 +5,28 @@ import {
   Text,
   Textarea,
   useBreakpointValue,
+  useToast,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useRef } from "react";
 import { MdMarkEmailRead } from "react-icons/md";
-
 const About = () => {
+  const toast = useToast();
+  const form = useRef(null);
   return (
     <Stack
       as={"form"}
+      ref={form}
       height="450px"
       onSubmit={(e) => {
         e.preventDefault();
+        form.current.reset();
+        toast({
+          title: "Message",
+          description: "Your message has been send",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
       }}
       mx={useBreakpointValue({ base: 10, sm: 0 })}
       className="flex space-y-5 items-center justify-center"

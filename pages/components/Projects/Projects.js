@@ -148,7 +148,7 @@ const Projects = () => {
         <Image
           src="/asset/images/welcome.webp"
           fit="contain"
-          height={"600px"}
+          height={"550px"}
           alt=""
         ></Image>
         <div className="flex flex-row items-center justify-center space-x-3 w-full h-full ml-8">
@@ -157,7 +157,7 @@ const Projects = () => {
         <Image
           fit="contain"
           src="/asset/images/location_ride.webp"
-          height={"600px"}
+          height={"550px"}
           alt="location_ride"
         ></Image>
         <div className="flex flex-row items-center justify-center space-x-3 w-full h-full ml-8">
@@ -165,7 +165,7 @@ const Projects = () => {
         </div>
         <Image
           src="/asset/images/Searching_drivers.webp"
-          height={"600px"}
+          height={"550px"}
           fit="contain"
           alt="Searching_drivers"
         ></Image>
@@ -174,7 +174,7 @@ const Projects = () => {
         </div>
         <Image
           src="/asset/images/Ride_accepted.webp"
-          height={"600px"}
+          height={"550px"}
           fit="contain"
           alt="Ride_accepted"
         ></Image>
@@ -183,7 +183,7 @@ const Projects = () => {
         </div>
         <Image
           src="/asset/images/driver_location.webp"
-          height={"600px"}
+          height={"550px"}
           fit="contain"
           alt=""
         ></Image>
@@ -192,7 +192,7 @@ const Projects = () => {
         </div>
         <MotionImage
           src="/asset/images/users_waiting_for_driver_approve.webp"
-          height={"600px"}
+          height={"550px"}
           fit="contain"
           alt="users_waiting_for_driver_approve"
         ></MotionImage>
@@ -201,7 +201,7 @@ const Projects = () => {
         </div>
         <MotionImage
           src="/asset/images/payment_details.webp"
-          height={"600px"}
+          height={"550px"}
           fit="contain"
           alt="payment_details"
         ></MotionImage>

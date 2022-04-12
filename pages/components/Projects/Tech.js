@@ -120,7 +120,7 @@ const Tech = () => {
             base: "2px solid rgba(209 ,213, 219, 1)",
             md: "none",
           })}
-          className=" flex flex-col rounded-tr-3xl rounded-br-3xl items-center  py-5 w-full "
+          className=" flex flex-col rounded-tr-none rounded-br-none  md:rounded-tr-3xl md:rounded-br-3xl items-center  py-5 w-full "
         >
           <BiMessageAltEdit color={"rgba(15 ,118, 110, 1)"} size={"60px"} />
           <Text

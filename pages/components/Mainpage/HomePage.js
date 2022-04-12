@@ -12,10 +12,6 @@ import { motion } from "framer-motion";
 const MotionIconButton = motion(IconButton);
 const TEXTS = ["Flutter Developer", "Web Developer", "Software Developer"];
 const HomePage = () => {
-  const MotionImage = motion(Image);
-  const [index, setIndex] = useState(0);
-  const bk = useBreakpoint();
-
   const dismob = useBreakpointValue({
     base: "block",
     sm: "none",
@@ -119,6 +115,7 @@ const HomePage = () => {
             />
           </motion.div>
         </div>
+
         <motion.div
           variants={{
             hidden: { opacity: 0 },
