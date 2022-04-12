@@ -31,7 +31,7 @@ const HomePage = () => {
   });
   const size = useBreakpointValue({
     md: "scale(1)",
-    lg: "scale(0.8)",
+    lg: "scale(1.1)",
     xl: "scale(1.1)",
   });
   return (
@@ -91,9 +91,7 @@ const HomePage = () => {
         </div>
 
         <div className="flex flex-[3] items-center justify-center">
-          <motion.section
-            layoutId=""
-            className="flex  flex-row items-center justify-center"
+          <motion.div
             initial={{
               y: 200,
               opacity: 0,
@@ -102,6 +100,7 @@ const HomePage = () => {
               y: 0,
               opacity: 1,
             }}
+            className="flex  flex-row items-center justify-center"
           >
             <Image
               display={dismob}
@@ -118,7 +117,7 @@ const HomePage = () => {
               transform={`rotate(-10deg) scale(0.9) ${size}`}
               alt="main_website"
             />
-          </motion.section>
+          </motion.div>
         </div>
         <motion.div
           variants={{

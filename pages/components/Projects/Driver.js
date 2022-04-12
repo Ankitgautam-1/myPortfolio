@@ -22,24 +22,6 @@ const Driver = () => {
   const [width, setWidth] = useState(0);
   const bk = useBreakpoint();
 
-  const x = useSpring(0, {
-    stiffness: 300,
-    damping: 200,
-  });
-  const scale = useTransform(x, [-100, 0], [1.05, 1]);
-  const fadein = useTransform(x, [-100, 0], [0.25, 1]);
-  useEffect(() => {
-    console.log("ImagesRef", ImagesRef.current.scrollWidth);
-    console.log("ImagesRef", ImagesRef.current.offsetWidth);
-    setWidth(
-      ImagesRef.current.scrollWidth + 100 - ImagesRef.current.offsetWidth
-    );
-  }, []);
-  useEffect(() => {
-    console.log("fadein", fadein);
-    console.log("x", x);
-  }, [fadein, x]);
-
   const dismob = useBreakpointValue({
     base: "block",
     sm: "none",
@@ -62,20 +44,20 @@ const Driver = () => {
   return (
     <Stack
       height={useBreakpointValue({
-        base: "1200px",
+        base: "1500px",
         sm: "1500px",
         md: "600px",
         lg: "600px",
       })}
+      spacing={0}
       alignItems="center"
       justifyContent={"center"}
       direction={useBreakpointValue({ base: "col", lg: "col" })}
-      mb={useBreakpointValue({ base: "50px", lg: 0 })}
-      className="  w-full  flex flex-col  md:flex-row items-center justify-center  h-full  max-w-[1440px] "
+      mb={useBreakpointValue({ base: 0, lg: 0 })}
+      className="  w-full  flex flex-col  md:flex-row   h-full  max-w-[1440px] "
     >
-      <div className="flex  w-full flex-[2] px-10 md:ml-5 md:mt-0   overflow-hidden flex-col md:flex-row h-screen   max-h-[700px] min-h-[600px]  ">
+      <div className="flex  w-full flex-[2] px-10 md:ml-5 md:mt-0   overflow-hidden flex-col md:flex-row h-max">
         <motion.div
-          style={{ opacity: fadein }}
           className="flex 
           mt-16
            lg:ml-20 2xl:ml-0 text-left  flex-[1] mob:flex-[2] flex-col w-full space-y-2 mob:space-y-5 items-start justify-center xl:min-w-[550px]  mob:min-h-[300px]"
@@ -91,12 +73,11 @@ const Driver = () => {
           </div>
           <div
             style={{ fontFamily: "Montserrat_Medium" }}
-            className="text-black  text-sm flex justify-center"
+            className="text-black  text-sm flex lg:pr-16 justify-center"
           >
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius,
-            assumenda quia. Ratione minima, officiis cupiditate impedit,
-            explicabo eligendi repudiandae quod fugit quisquam consequuntur
-            perferendis. Hic.
+            The Travel Treat Driver application is design for driver that work
+            in Travel Treat Service, and the app supports many devices.Every
+            Driver need to verify there account to be able to work as Driver
           </div>
           <div
             style={{ fontFamily: "Montserrat_Medium" }}
@@ -104,7 +85,7 @@ const Driver = () => {
           >
             <Button
               as="a"
-              href="https://github.com/Ankitgautam-1/Travel-Treat-App"
+              href="https://github.com/Ankitgautam-1/Travel-Treat-Driver"
               _focus={{}}
               marginTop="10px"
               leftIcon={<FaGithub />}
@@ -147,24 +128,7 @@ const Driver = () => {
           </div>
         </motion.div>
       </div>
-      <motion.div
-        drag="x"
-        whileTap={{ cursor: "grabbing" }}
-        dragConstraints={{
-          left: useBreakpointValue({
-            base: -2000,
-            md: -1800,
-            lg: -1700,
-            xl: -1500,
-            "2xl": -1500,
-          }),
-          right: 0,
-        }}
-        className="flex flex-row  flex-[3] mob:mt-32 md:mt-0 h-full w-full "
-        ref={ImagesRef}
-        dragElastic={0.05}
-        style={{ x, scale }}
-      >
+      <div className="flex flex-row overflow-x-scroll items-center   scroll-smooth flex-[3] mob:mt-32 md:mt-0 h-full w-full ">
         <motion.div
           initial={{
             x: 200,
@@ -182,40 +146,67 @@ const Driver = () => {
           <BsArrowLeftCircleFill size={"35px"} /> <h1>Drag Arrow</h1>
         </motion.div>
         <Image
-          src="/asset/images/main_app.webp"
-          height={"500px"}
+          src="/asset/images/Drivers_homepage.webp"
+          height={"550px"}
+          fit="contain"
           alt=""
         ></Image>{" "}
         <div className="flex flex-row items-center justify-center space-x-3 w-full h-full ml-8">
           <BsArrowLeftCircleFill size={"25px"} />
         </div>
         <Image
-          src="/asset/images/driver_user_app.webp"
+          src="/asset/images/Users_ride_req.webp"
+          height={"550px"}
+          fit="contain"
+          alt=""
+        ></Image>{" "}
+        <div className="flex flex-row items-center justify-center space-x-3 w-full h-full ml-8">
+          <BsArrowLeftCircleFill size={"25px"} />
+        </div>
+        <Image
+          src="/asset/images/Users_details_for_driver.webp"
           height={"550px"}
           ml="16"
+          fit="contain"
           alt=""
         ></Image>{" "}
         <div className="flex flex-row items-center justify-center space-x-3 w-full h-full ml-8">
           <BsArrowLeftCircleFill size={"25px"} />
         </div>
-        <Image src="/asset/images/welcome.webp" height={"500px"} alt=""></Image>{" "}
-        <div className="flex flex-row items-center justify-center space-x-3 w-full h-full ml-8">
-          <BsArrowLeftCircleFill size={"25px"} />
-        </div>
         <Image
-          src="/asset/images/main_app.webp"
-          height={"500px"}
+          src="/asset/images/Driver_entering_otp.webp"
+          height={"550px"}
+          fit="contain"
           alt=""
         ></Image>{" "}
         <div className="flex flex-row items-center justify-center space-x-3 w-full h-full ml-8">
           <BsArrowLeftCircleFill size={"25px"} />
         </div>
         <MotionImage
-          src="/asset/images/main_app.webp"
-          height={"500px"}
-          alt=""
+          src="/asset/images/Driver_accepting_cash_payment.webp"
+          height={"550px"}
+          fit="contain"
+          alt="Driver_accepting_cash_payment"
         ></MotionImage>
-      </motion.div>
+        <div className="flex flex-row items-center justify-center space-x-3 w-full h-full ml-8">
+          <BsArrowLeftCircleFill size={"25px"} />
+        </div>
+        <MotionImage
+          src="/asset/images/Drivers_review_fo_user.webp"
+          height={"550px"}
+          fit="contain"
+          alt="Drivers_review_fo_user"
+        ></MotionImage>
+        <div className="flex flex-row items-center justify-center space-x-3 w-full h-full ml-8">
+          <BsArrowLeftCircleFill size={"25px"} />
+        </div>
+        <MotionImage
+          src="/asset/images/Drivers_sending_online_cash_payment_req.webp"
+          height={"550px"}
+          fit="contain"
+          alt="Drivers_sending_online_cash_payment_req"
+        ></MotionImage>
+      </div>
     </Stack>
   );
 };

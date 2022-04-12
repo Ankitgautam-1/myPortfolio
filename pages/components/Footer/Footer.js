@@ -37,34 +37,28 @@ export default function Footer() {
         <Stack direction={"row"} spacing={6}>
           <IconButton
             as="a"
-            href="#"
+            href="https://www.linkedin.com/in/-ankit-gautam/"
             _focus={{}}
-            icon={<FaTwitter />}
+            _hover={{
+              bg: "teal",
+              color: "white",
+            }}
+            icon={<FaLinkedinIn />}
             color="black"
             width="45px"
             minHeight="45px"
             height="45px"
             borderRadius={"50%"}
-            _hover={{ bg: "gray.200" }}
-          ></IconButton>
-
-          <IconButton
-            as="a"
-            href="#"
-            width="45px"
-            minHeight="45px"
-            height="45px"
-            _focus={{}}
-            icon={<FaInstagram />}
-            color="black"
-            borderRadius={"50%"}
-            _hover={{ bg: "gray.200" }}
           ></IconButton>
           <IconButton
             as="a"
             href="https://github.com/Ankitgautam-1"
             _focus={{}}
             icon={<FaGithub />}
+            _hover={{
+              bg: "teal",
+              color: "white",
+            }}
             target={"_blank"}
             color="black"
             width="45px"

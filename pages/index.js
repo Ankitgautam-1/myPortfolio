@@ -9,8 +9,10 @@ import Footer from "./components/Footer/Footer";
 import Projects from "./components/Projects/Projects";
 import Driver from "./components/Projects/Driver";
 import { Stack, useBreakpointValue } from "@chakra-ui/react";
+import Tech from "./components/Projects/Tech";
+import About from "./components/Utils/About";
 export default function Home() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
@@ -56,35 +58,30 @@ export default function Home() {
                 >
                   <HomePage />
                 </div>
+                <div
+                  className=" w-full h-max pt-10 md:pt-0    md:pl-0 flex     items-center justify-center"
+                  id="Edu"
+                >
+                  <Tech />
+                </div>
                 <Stack
                   id="Projects"
                   className=" w-full   h-[1200px] md:h-[800px] lg:h-[650px] lg:pt-0 md:pl-0 flex  min-h-[600px] items-center justify-center"
                 >
                   <Projects />
                 </Stack>
+
                 <Stack
                   id="Projects"
-                  className=" w-full   h-[1200px] md:h-[800px] lg:h-[650px] lg:pt-0 md:pl-0 flex  min-h-[600px] items-center justify-center"
+                  className=" flex w-full  max-w-[1500px]  items-center justify-center"
                 >
                   <Driver />
                 </Stack>
                 <div
-                  className="h-screen  w-full flex items-center min-h-[1100px] mob:min-h-[1500px]  md:min-h-[350px] justify-center"
-                  style={{
-                    fontFamily: "Montserrat_Medium",
-                    paddingTop: "25px",
-                  }}
-                  id="Edu"
-                ></div>
-                <div
-                  className="h-screen w-full flex items-center justify-center"
-                  style={{
-                    fontFamily: "Montserrat_Medium",
-                    paddingTop: "25px",
-                  }}
+                  className=" w-full h-max    md:pl-0 flex     items-center justify-center"
                   id="About_me"
                 >
-                  About me
+                  <About />
                 </div>
                 <Footer />
               </div>

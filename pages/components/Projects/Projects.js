@@ -22,24 +22,6 @@ const Projects = () => {
   const [width, setWidth] = useState(0);
   const bk = useBreakpoint();
 
-  const x = useSpring(0, {
-    stiffness: 300,
-    damping: 200,
-  });
-  const scale = useTransform(x, [-100, 0], [1.05, 1]);
-  const fadein = useTransform(x, [-100, 0], [0.25, 1]);
-  useEffect(() => {
-    console.log("ImagesRef", ImagesRef.current.scrollWidth);
-    console.log("ImagesRef", ImagesRef.current.offsetWidth);
-    setWidth(
-      ImagesRef.current.scrollWidth + 100 - ImagesRef.current.offsetWidth
-    );
-  }, []);
-  useEffect(() => {
-    console.log("fadein", fadein);
-    console.log("x", x);
-  }, [fadein, x]);
-
   const dismob = useBreakpointValue({
     base: "block",
     sm: "none",
@@ -62,7 +44,7 @@ const Projects = () => {
   return (
     <Stack
       height={useBreakpointValue({
-        base: "1200px",
+        base: "1500px",
         sm: "1500px",
         md: "600px",
         lg: "600px",
@@ -70,12 +52,11 @@ const Projects = () => {
       alignItems="center"
       justifyContent={"center"}
       direction={useBreakpointValue({ base: "col", lg: "col" })}
-      mb={useBreakpointValue({ base: "50px", lg: 0 })}
+      mb={useBreakpointValue({ base: "0px", lg: 0 })}
       className="  w-full  flex flex-col  md:flex-row items-center justify-center  h-full  max-w-[1440px] "
     >
       <div className="flex  w-full flex-[2] px-10 md:ml-5 md:mt-0   overflow-hidden flex-col md:flex-row h-screen   max-h-[700px] min-h-[600px]  ">
         <motion.div
-          style={{ opacity: fadein }}
           className="flex 
           mt-16
            lg:ml-20 2xl:ml-0 text-left  flex-[1] mob:flex-[2] flex-col w-full space-y-2 mob:space-y-5 items-start justify-center xl:min-w-[550px]  mob:min-h-[300px]"
@@ -87,16 +68,16 @@ const Projects = () => {
             <h1 className=" text-3xl  sm:text-4xl">Travel Treat</h1>
           </div>
           <div className="text-black text-xl mob:text-3xl  sm:text-4xl font-extrabold md:text-5xl flex  justify-center">
-            User App
+            User&#39;s App
           </div>
           <div
             style={{ fontFamily: "Montserrat_Medium" }}
-            className="text-black  text-sm flex justify-center"
+            className="text-black  text-sm flex lg:pr-16 justify-center"
           >
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius,
-            assumenda quia. Ratione minima, officiis cupiditate impedit,
-            explicabo eligendi repudiandae quod fugit quisquam consequuntur
-            perferendis. Hic.
+            The Travel Treat User application is design for user to able to book
+            ride easily with many features like geting user&#39;s current
+            location address etc.Travel Treat multiple payment system with cash
+            payment
           </div>
           <div
             style={{ fontFamily: "Montserrat_Medium" }}
@@ -124,8 +105,7 @@ const Projects = () => {
             <Button
               as="a"
               href="/asset/resources/user.apk"
-              download={"user"}
-              _focus={{}}
+              download={"users"}
               marginTop="10px"
               leftIcon={<BsBoxArrowInUpRight />}
               target={"_blank"}
@@ -148,24 +128,7 @@ const Projects = () => {
           </div>
         </motion.div>
       </div>
-      <motion.div
-        drag="x"
-        whileTap={{ cursor: "grabbing" }}
-        dragConstraints={{
-          left: useBreakpointValue({
-            base: -2000,
-            md: -1800,
-            lg: -1700,
-            xl: -1500,
-            "2xl": -1500,
-          }),
-          right: 0,
-        }}
-        className="flex flex-row  flex-[3] mob:mt-32 md:mt-0 h-full w-full "
-        ref={ImagesRef}
-        dragElastic={0.05}
-        style={{ x, scale }}
-      >
+      <div className="flex flex-row overflow-x-scroll  scroll-smooth flex-[3] mob:mt-32 md:mt-0 h-full w-full ">
         <motion.div
           initial={{
             x: 200,
@@ -183,40 +146,66 @@ const Projects = () => {
           <BsArrowLeftCircleFill size={"35px"} /> <h1>Drag Arrow</h1>
         </motion.div>
         <Image
-          src="/asset/images/main_app.webp"
-          height={"500px"}
+          src="/asset/images/welcome.webp"
+          fit="contain"
+          height={"600px"}
           alt=""
-        ></Image>{" "}
+        ></Image>
         <div className="flex flex-row items-center justify-center space-x-3 w-full h-full ml-8">
           <BsArrowLeftCircleFill size={"25px"} />
         </div>
         <Image
-          src="/asset/images/driver_user_app.webp"
-          height={"550px"}
-          ml="16"
-          alt=""
-        ></Image>{" "}
-        <div className="flex flex-row items-center justify-center space-x-3 w-full h-full ml-8">
-          <BsArrowLeftCircleFill size={"25px"} />
-        </div>
-        <Image src="/asset/images/welcome.webp" height={"500px"} alt=""></Image>{" "}
+          fit="contain"
+          src="/asset/images/location_ride.webp"
+          height={"600px"}
+          alt="location_ride"
+        ></Image>
         <div className="flex flex-row items-center justify-center space-x-3 w-full h-full ml-8">
           <BsArrowLeftCircleFill size={"25px"} />
         </div>
         <Image
-          src="/asset/images/main_app.webp"
-          height={"500px"}
+          src="/asset/images/Searching_drivers.webp"
+          height={"600px"}
+          fit="contain"
+          alt="Searching_drivers"
+        ></Image>
+        <div className="flex flex-row items-center justify-center space-x-3 w-full h-full ml-8">
+          <BsArrowLeftCircleFill size={"25px"} />
+        </div>
+        <Image
+          src="/asset/images/Ride_accepted.webp"
+          height={"600px"}
+          fit="contain"
+          alt="Ride_accepted"
+        ></Image>
+        <div className="flex flex-row items-center justify-center space-x-3 w-full h-full ml-8">
+          <BsArrowLeftCircleFill size={"25px"} />
+        </div>
+        <Image
+          src="/asset/images/driver_location.webp"
+          height={"600px"}
+          fit="contain"
           alt=""
-        ></Image>{" "}
+        ></Image>
         <div className="flex flex-row items-center justify-center space-x-3 w-full h-full ml-8">
           <BsArrowLeftCircleFill size={"25px"} />
         </div>
         <MotionImage
-          src="/asset/images/main_app.webp"
-          height={"500px"}
-          alt=""
+          src="/asset/images/users_waiting_for_driver_approve.webp"
+          height={"600px"}
+          fit="contain"
+          alt="users_waiting_for_driver_approve"
         ></MotionImage>
-      </motion.div>
+        <div className="flex flex-row items-center justify-center space-x-3 w-full h-full ml-8">
+          <BsArrowLeftCircleFill size={"25px"} />
+        </div>
+        <MotionImage
+          src="/asset/images/payment_details.webp"
+          height={"600px"}
+          fit="contain"
+          alt="payment_details"
+        ></MotionImage>
+      </div>
     </Stack>
   );
 };
