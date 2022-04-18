@@ -29,7 +29,7 @@ export default function Home() {
       >
         <Header />
         <div
-          className=" w-full  flex  h-max   items-center justify-center"
+          className=" w-full  flex  h-max lg:h-screen lg:max-h-[800px] items-center justify-center"
           style={{
             marginTop: "25px",
           }}
