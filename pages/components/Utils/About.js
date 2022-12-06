@@ -21,7 +21,7 @@ const About = () => {
       height="450px"
       onSubmit={(e) => {
         e.preventDefault();
-        window.open(`mailto:${mailto}:?subject=Contact&body=${message}`)
+        window.open(`mailto:${mailto}?subject=Contact&body=${message}`)
 
         // form.current.reset();
         toast({
