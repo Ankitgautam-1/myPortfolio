@@ -1,6 +1,6 @@
 import { SimpleGrid, Stack, Text, useBreakpointValue } from "@chakra-ui/react";
 import React from "react";
-import { BiMessageAltEdit } from "react-icons/bi";
+import { RiFlutterFill } from "react-icons/ri";
 import { DiAndroid } from "react-icons/di";
 import { MdWeb } from "react-icons/md";
 
@@ -39,7 +39,7 @@ const Tech = () => {
           </Text>
           <Text
             px={useBreakpointValue({ base: 0, sm: 8 })}
-            textAlign="center"
+            textAlign="left"
             lineHeight={"tall"}
             className="font-extralight"
             fontSize={"16px"}
@@ -50,20 +50,23 @@ const Tech = () => {
           </Text>
           <Text color="teal" pt="25px" fontSize={"lg"} fontWeight="700" mb={5}>
             {" "}
-            Web Developer Tools:
+            Fullstack Developer:
           </Text>
           <Text
             px={useBreakpointValue({ base: 0, sm: 8 })}
-            textAlign="center"
+            textAlign="left"
             lineHeight={"tall"}
             fontSize={"15px"}
             className="flex flex-col"
           >
-            <span> React</span>
-            <span> NextJS</span>
-            <span> Context API</span>
-            <span> Redux</span>
-            <span> Tailwind</span>
+            <li> React</li>
+            <li> NextJS</li>
+            <li> Express.js</li>
+            <li> Redux</li>
+            <li> Tailwind</li>
+            <li> React Query</li>
+            <li> Firebase</li>
+
           </Text>
         </Stack>
         <Stack
@@ -90,7 +93,7 @@ const Tech = () => {
           </Text>
           <Text
             px={useBreakpointValue({ base: 0, sm: 8 })}
-            textAlign="center"
+            textAlign="left"
             lineHeight={"tall"}
             fontSize={"16px"}
           >
@@ -104,16 +107,17 @@ const Tech = () => {
           </Text>
           <Text
             px={useBreakpointValue({ base: 0, sm: 8 })}
-            textAlign="center"
+            textAlign="left"
             lineHeight={"tall"}
             className="flex flex-col"
             fontSize={"15px"}
           >
-            <span> Flutter</span>
-            <span> Firebase</span>
-            <span> Provider</span>
-            <span> Supabase</span>
+            <li> Flutter</li>
+            <li> Firebase</li>
+            <li> Provider</li>
+            <li> Supabase</li>
           </Text>
+
         </Stack>
         <Stack
           borderBottom={useBreakpointValue({
@@ -122,7 +126,7 @@ const Tech = () => {
           })}
           className=" flex flex-col rounded-tr-none rounded-br-none  md:rounded-tr-3xl md:rounded-br-3xl items-center  py-5 w-full "
         >
-          <BiMessageAltEdit color={"rgba(15 ,118, 110, 1)"} size={"60px"} />
+          <RiFlutterFill color={"rgba(15 ,118, 110, 1)"} size={"60px"} />
           <Text
             color="gray.800"
             mt={3}
@@ -131,31 +135,31 @@ const Tech = () => {
             fontWeight="700"
           >
             {" "}
-            Design
+            Flutter
           </Text>
           <Text
             px={useBreakpointValue({ base: 0, sm: 8, md: 10 })}
-            textAlign="center"
+            textAlign="left"
             lineHeight={"tall"}
             fontSize={"16px"}
           >
-            I like to create beautiful and functional user-friendly designs.I
-            have created my own designs and developed them for my projects.
+            With Flutter I have created many applications to gain experience and I have learned many things and wanted to learn more ahead.
           </Text>
           <Text color="teal" pt="25px" fontSize={"lg"} fontWeight="700" mb={5}>
-            {" "}
-            Design Tools:
+
+            Flutter
           </Text>
           <Text
             px={useBreakpointValue({ base: 0, sm: 8 })}
-            textAlign="center"
+            textAlign="left"
             lineHeight={"tall"}
-            fontSize={"15px"}
             className="flex flex-col"
+            fontSize={"15px"}
           >
-            <span> Figma</span>
-            <span> Adobe XD</span>
-            <span> Photoshop</span>
+            <li> BLOC</li>
+            <li> Provider</li>
+            <li> Riverpod</li>
+            <li> Singleton&apos;s pattern</li>
           </Text>
         </Stack>
       </SimpleGrid>

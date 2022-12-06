@@ -11,6 +11,7 @@ import Driver from "./components/Projects/Driver";
 import { Stack, useBreakpointValue } from "@chakra-ui/react";
 import Tech from "./components/Projects/Tech";
 import About from "./components/Utils/About";
+import MoviesClicks from "./components/Projects/MoviesClicks";
 export default function Home() {
   return (
     <div>
@@ -18,7 +19,7 @@ export default function Home() {
         <title>Ankit Gautam</title>
         <meta
           name="description"
-          content="I am an BScIT Student and Enthusiastic for learning useful technology and i am looking forward to work and learn in challenging environment, utilizing my skill and knowledge to be the best of my abilities and contribute positively to my personal growth as well as growth of the organization."
+          content="I am IT Student and Enthusiastic for learning useful technology and i am looking forward to work and learn in challenging environment, utilizing my skill and knowledge to be the best of my abilities and contribute positively to my personal growth as well as growth of the organization."
         />
         <link rel="icon" href="/asset/images/logo.ico" />
       </Head>
@@ -43,6 +44,12 @@ export default function Home() {
         >
           <Tech />
         </div>
+        <Stack
+          id="Projects"
+          className=" w-full   h-[1200px] md:h-[800px] lg:h-[650px] lg:pt-0 md:pl-0 flex  min-h-[600px] items-center justify-center"
+        >
+          <MoviesClicks />
+        </Stack>
         <Stack
           id="Projects"
           className=" w-full   h-[1200px] md:h-[800px] lg:h-[650px] lg:pt-0 md:pl-0 flex  min-h-[600px] items-center justify-center"

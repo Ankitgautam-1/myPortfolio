@@ -7,11 +7,14 @@ import {
   useBreakpointValue,
   useToast,
 } from "@chakra-ui/react";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { MdMarkEmailRead } from "react-icons/md";
 const About = () => {
   const toast = useToast();
   const form = useRef(null);
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [name, setName] = useState('');
   return (
     <Stack
       as={"form"}
@@ -19,6 +22,8 @@ const About = () => {
       height="450px"
       onSubmit={(e) => {
         e.preventDefault();
+        window.open(`mailto:${email}?subject=Contact&body=${message}`)
+
         form.current.reset();
         toast({
           title: "Message",
@@ -42,11 +47,18 @@ const About = () => {
             fontSize={useBreakpointValue({ base: "sm", sm: "md" })}
             minLength={3}
             placeholder={"Name"}
+            onChange={(val) => {
+              setName(val)
+            }}
             required
           ></Input>
           <Input
             type={"email"}
             required
+
+            onChange={(val) => {
+              setEmail(val)
+            }}
             fontSize={useBreakpointValue({ base: "sm", sm: "md" })}
             _focus={{}}
             placeholder={"Email"}
@@ -58,6 +70,9 @@ const About = () => {
           maxHeight={"150px"}
           minHeight={"100px"}
           type={"text"}
+          onChange={(val) => {
+            setMessage(val)
+          }}
           fontSize={useBreakpointValue({ base: "sm", sm: "md" })}
           required
           placeholder={"Message"}
