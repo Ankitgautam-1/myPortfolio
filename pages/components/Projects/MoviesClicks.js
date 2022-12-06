@@ -1,45 +1,20 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import {
   useBreakpoint,
   IconButton,
   Image,
-  HStack,
   useBreakpointValue,
   Button,
   Stack,
 } from "@chakra-ui/react";
-import TextAnimation from "react-text-animations";
-import { FaGithub, FaArrowLeft } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { BsArrowLeftCircleFill } from "react-icons/bs";
-import { BsBoxArrowInUpRight } from "react-icons/bs";
-import { motion, useTransform, useSpring, useMotionValue } from "framer-motion";
-const MotionIconButton = motion(IconButton);
-const TEXTS = ["Flutter Developer", "Web Developer", "Software Developer"];
-const MoviesClicks = () => {
-  const ImagesRef = useRef(null);
-  const MotionImage = motion(Image);
-  const [index, setIndex] = useState(0);
-  const [width, setWidth] = useState(0);
-  const bk = useBreakpoint();
+import { IoLogoGooglePlaystore } from "react-icons/io5"
+import { AiFillYoutube } from "react-icons/ai";
+import { motion } from "framer-motion";
 
-  const dismob = useBreakpointValue({
-    base: "block",
-    sm: "none",
-    lg: "none",
-    xl: "block",
-  });
-  const dislap = useBreakpointValue({
-    base: "none",
-    sm: "block",
-    md: "block",
-    lg: "block",
-    xl: "block",
-  });
-  const size = useBreakpointValue({
-    md: "scale(1)",
-    lg: "scale(0.8)",
-    xl: "scale(1.1)",
-  });
+const MoviesClicks = () => {
+
   const project_name = "Movies Clicks";
 
   const desc = 'The Movies Clicks app is free application for finding movies with there category and  information like IMDB ratings and vote count realease date, movie production details.'
@@ -78,7 +53,7 @@ const MoviesClicks = () => {
           </div>
           <div
             style={{ fontFamily: "Montserrat_Medium" }}
-            className="text-black  items-start  xl:space-x-3 text-sm flex flex-col xl:flex-row justify-between"
+            className="text-black  items-start  xl:space-x-3 text-sm flex flex-col 2xl:flex-row justify-between"
           >
             <Button
               as="a"
@@ -101,9 +76,9 @@ const MoviesClicks = () => {
             </Button>
             <Button
               as="a"
-              download={"users"}
+              href="https://play.google.com/store/apps/details?id=com.solutions.moviesclicks"
               marginTop="10px"
-              leftIcon={<BsBoxArrowInUpRight />}
+              leftIcon={<IoLogoGooglePlaystore />}
               target={"_blank"}
               color="white"
               fontWeight={"light"}
@@ -120,6 +95,29 @@ const MoviesClicks = () => {
               _hover={{ transform: "scale(1.05)" }}
             >
               Download App
+            </Button>
+            <Button
+              as="a"
+              href="https://www.youtube.com/watch?v=TMTn7U9IovQ"
+              about="_blank"
+              marginTop="10px"
+              leftIcon={<AiFillYoutube />}
+              target={"_blank"}
+              color="white"
+              fontWeight={"light"}
+              minHeight="45px"
+              size={useBreakpointValue({
+                base: "sm",
+                sm: "sm",
+                md: "md",
+                lg: "md",
+              })}
+              borderRadius={"5px"}
+              ml={useBreakpointValue({ base: 0, xl: 2 })}
+              bg="teal.600"
+              _hover={{ transform: "scale(1.05)" }}
+            >
+              Youtube
             </Button>
           </div>
         </motion.div>
