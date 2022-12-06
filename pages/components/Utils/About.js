@@ -13,6 +13,7 @@ const About = () => {
   const toast = useToast();
   const form = useRef(null);
   const [message, setMessage] = useState('');
+  const [subject, setSubject] = useState('');
   const [mailto, setMailto] = useState('ankitgautam77755@gmail.com');
   return (
     <Stack
@@ -21,7 +22,7 @@ const About = () => {
       height="450px"
       onSubmit={(e) => {
         e.preventDefault();
-        window.open(`mailto:${mailto}?subject=Contact&body=${encodeURIComponent(message)}`, "Gmail")
+        window.open(`mailto:${mailto}?subject=${subject}&body=${message}`)
         form.current.reset();
 
       }}
@@ -31,19 +32,29 @@ const About = () => {
       <Text style={{ fontFamily: "Montserrat_Medium" }} fontSize="2xl">
         Contact me
       </Text>
-      <Stack className="space-y-5 " width={"100%"}>
+      <Stack className="space-y-5 ">
+        <Stack direction={useBreakpointValue({ base: "column", md: "row" })}>
+          <Input
+            type={"text"}
+            _focus={{}}
+            fontSize={useBreakpointValue({ base: "sm", sm: "md" })}
+            minLength={3}
+            placeholder={"Subject"}
+            onChange={(val) => {
+              setSubject(val.target.value)
+            }}
+            required
+          ></Input>
 
+        </Stack>
 
         <Textarea
           _focus={{}}
-          maxHeight={"250px"}
-          minHeight={"150px"}
-          width={"100%"}
-          minWidth={"200px"}
-          maxWidth={"350px"}
+          maxHeight={"150px"}
+          minHeight={"100px"}
           type={"text"}
           onChange={(val) => {
-            setMessage(val)
+            setMessage(val.target.value)
           }}
           fontSize={useBreakpointValue({ base: "sm", sm: "md" })}
           required
