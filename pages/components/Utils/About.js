@@ -12,9 +12,8 @@ import { MdMarkEmailRead } from "react-icons/md";
 const About = () => {
   const toast = useToast();
   const form = useRef(null);
-  const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [name, setName] = useState('');
+  const [mailto, setMailto] = useState('ankitgautam77755@gmail.com');
   return (
     <Stack
       as={"form"}
@@ -22,9 +21,9 @@ const About = () => {
       height="450px"
       onSubmit={(e) => {
         e.preventDefault();
-        window.open(`mailto:${email}?subject=Contact&body=${message}`)
+        window.open(`mailto:${mailto}:?subject=Contact&body=${message}`)
 
-        form.current.reset();
+        // form.current.reset();
         toast({
           title: "Message",
           description: "Your message has been send",
@@ -39,36 +38,16 @@ const About = () => {
       <Text style={{ fontFamily: "Montserrat_Medium" }} fontSize="2xl">
         Contact me
       </Text>
-      <Stack className="space-y-5 ">
-        <Stack direction={useBreakpointValue({ base: "column", md: "row" })}>
-          <Input
-            type={"text"}
-            _focus={{}}
-            fontSize={useBreakpointValue({ base: "sm", sm: "md" })}
-            minLength={3}
-            placeholder={"Name"}
-            onChange={(val) => {
-              setName(val)
-            }}
-            required
-          ></Input>
-          <Input
-            type={"email"}
-            required
+      <Stack className="space-y-5 " width={"100%"}>
 
-            onChange={(val) => {
-              setEmail(val)
-            }}
-            fontSize={useBreakpointValue({ base: "sm", sm: "md" })}
-            _focus={{}}
-            placeholder={"Email"}
-          ></Input>
-        </Stack>
 
         <Textarea
           _focus={{}}
-          maxHeight={"150px"}
-          minHeight={"100px"}
+          maxHeight={"250px"}
+          minHeight={"150px"}
+          width={"100%"}
+          minWidth={"200px"}
+          maxWidth={"350px"}
           type={"text"}
           onChange={(val) => {
             setMessage(val)
