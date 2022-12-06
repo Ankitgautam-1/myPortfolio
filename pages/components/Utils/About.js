@@ -12,8 +12,9 @@ import { MdMarkEmailRead } from "react-icons/md";
 const About = () => {
   const toast = useToast();
   const form = useRef(null);
-  const [message, setMessage] = useState('');
-  const [mailto, setMailto] = useState('ankitgautam77755@gmail.com');
+  const mailto = useRef('ankitgautam77755@gmail.com');
+  const message = useRef('');
+
   return (
     <Stack
       as={"form"}
@@ -21,16 +22,10 @@ const About = () => {
       height="450px"
       onSubmit={(e) => {
         e.preventDefault();
-        window.open(`mailto:${mailto}?subject=Contact&body=${message}`)
+        location.href = "mailto:" + mailto.current + '&subject=Contact' + '&body=' + message.current;
+        console.log(location);
 
         // form.current.reset();
-        toast({
-          title: "Message",
-          description: "Your message has been send",
-          status: "success",
-          duration: 3000,
-          isClosable: true,
-        });
       }}
       mx={useBreakpointValue({ base: 10, sm: 0 })}
       className="flex space-y-5 items-center justify-center"
@@ -46,11 +41,12 @@ const About = () => {
           maxHeight={"250px"}
           minHeight={"150px"}
           width={"100%"}
+          ref={message}
           minWidth={"200px"}
           maxWidth={"350px"}
           type={"text"}
           onChange={(val) => {
-            setMessage(val)
+            message.current = val
           }}
           fontSize={useBreakpointValue({ base: "sm", sm: "md" })}
           required
