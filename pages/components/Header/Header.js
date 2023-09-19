@@ -131,7 +131,7 @@ const Header = () => {
                 >
                   <button className="flex items-center justify-center space-x-3">
                     <a
-                      href="/asset/resources/Ankit Gautam.pdf"
+                      href="/asset/resources/ankit__gautam_resume.pdf"
                       download={"Ankit_Gautam_Resume"}
                     >
                       Resume
